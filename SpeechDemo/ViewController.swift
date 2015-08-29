@@ -7,8 +7,7 @@ import UIKit
 import QuartzCore
 import AVFoundation
 import Foundation
-
-
+import SystemConfiguration
 class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsViewControllerDelegate {
 
 
@@ -75,41 +74,20 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
         speechSynthesizer.delegate = self
         
         setInitialFontAttribute()
-        let url = NSURL(string: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http%3A%2F%2Fnews.google.com%2Fnews%3Foutput%3Drss")
-        let requestGet = NSMutableURLRequest(URL: url!)
-        var response: NSURLResponse?
-        
-        requestGet.HTTPMethod = "GET"
-        requestGet.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        NSURLConnection.sendAsynchronousRequest(requestGet, queue: NSOperationQueue.mainQueue())
-            {(response, data, error) in
-                
-                println(NSString(data: data, encoding: NSUTF8StringEncoding))
-                
-                var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-                let json:JSON = JSON(data: data)
-                var str: String = " "
-                if response != nil {
-                    
-                    for(key :String, news:JSON) in json["responseData"]["feed"]["entries"]{
-                        str = str+news["title"].stringValue + "\n"
-                        self.tvEditor.text = str
-                        
-                    }
-                    
-                }
-                
-                
-                
-                
-        }
-        //self.f1()
+              
         
     }
     
     override func viewWillAppear(animated: Bool) {
-       // self.GetNews()
+        
+        if(self.isConnected()){
+            self.GetNews()
+        }
+        else{
+           self.tvEditor.text = "No Internet Connection"
+        }
+     
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -354,53 +332,62 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
         preferredVoiceLanguageCode = settings.objectForKey("languageCode") as! String
     }
     
-//     func GetNews() {
-//        let urlPath: String = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http%3A%2F%2Fnews.google.com%2Fnews%3Foutput%3Drss"
-//       
-//       
-//        var feed: String = "no internet connection"
-//        var url2: NSURL = NSURL(string: urlPath)!
-//        var request1: NSURLRequest = NSURLRequest(URL: url2)
-//        var response2: AutoreleasingUnsafeMutablePointer<NSURLResponse? >= nil
-//        var error2: NSErrorPointer = nil
-//        var dataVal: NSData =  NSURLConnection.sendSynchronousRequest(request1, returningResponse: response2, error:nil)!
-//        var err: NSError
-//        println(response2)
-//        var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataVal, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-//        let json:JSON = JSON(data: dataVal)
-//        if response2 != nil {
-//            
-//            for(key :String, news:JSON) in json["entries"]{
-//                tvEditor.text = news["title"].stringValue + "/n"
-//            
-//                 ///=
-//            }
-//            
-//        }
-//        
-//       
-//        
-//    }
+     func GetNews() {
+        let url = NSURL(string: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http%3A%2F%2Fnews.google.com%2Fnews%3Foutput%3Drss")
+        let requestGet = NSMutableURLRequest(URL: url!)
+        var response: NSURLResponse?
+        
+        requestGet.HTTPMethod = "GET"
+        requestGet.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        NSURLConnection.sendAsynchronousRequest(requestGet, queue: NSOperationQueue.mainQueue())
+            {(response, data, error) in
+                
+                println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                
+                var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
+                let json:JSON = JSON(data: data)
+                var str: String = " "
+                if response != nil {
+                    
+                    for(key :String, news:JSON) in json["responseData"]["feed"]["entries"]{
+                        str = str+news["title"].stringValue + "\n"
+                        self.tvEditor.text = str
+                        
+                    }
+                    
+                }
+                
+                
+                
+                
+        }
+    }
     
-
+    func isConnected() -> Bool {
+        
+        var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
+        zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(&zeroAddress) {
+            SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0)).takeRetainedValue()
+        }
+        
+        var flags: SCNetworkReachabilityFlags = 0
+        if SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) == 0 {
+            return false
+        }
+        
+        let isReachable = (flags & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        
+        return isReachable && !needsConnection
+    }
+        
     
-   //    func makeHTTPPostRequest(path: String, body: [String: AnyObject], onCompletion: ServiceResponse) {
-//        var err: NSError?
-//        let request = NSMutableURLRequest(URL: NSURL(string: path)!)
-//        
-//        // Set the method to POST
-//        request.HTTPMethod = "POST"
-//        
-//        // Set the POST body for the request
-//        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(body, options: nil, error: &err)
-//        let session = NSURLSession.sharedSession()
-//        
-//        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-//            let json:JSON = JSON(data: data)
-//            onCompletion(json, err)
-//        })
-//        task.resume()
-//    }
+  
+    
     
     
 }
