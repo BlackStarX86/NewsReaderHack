@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>802F5824-9E64-40B1-9E0B-5A56D79BB18A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>35AD064EAB104BF49F94EC5D5E8C6E900D658491</key>
+		<string>https://github.com/BlackStarX86/NewsReaderHack.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SpeechDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>35AD064EAB104BF49F94EC5D5E8C6E900D658491</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/BlackStarX86/NewsReaderHack.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>35AD064EAB104BF49F94EC5D5E8C6E900D658491</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>35AD064EAB104BF49F94EC5D5E8C6E900D658491</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SpeechDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
