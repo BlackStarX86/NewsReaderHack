@@ -62,7 +62,7 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
         pvSpeechProgress.progress = 0.0
         
         // Create a swipe down gesture for hiding the keyboard.
-        var swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeDownGesture:")
+        let swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeDownGesture:")
         swipeDownGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Down
         view.addGestureRecognizer(swipeDownGestureRecognizer)
         
@@ -112,13 +112,13 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
     
     
     func registerDefaultSettings() {
-        rate = AVSpeechUtteranceDefaultSpeechRate/3
+        rate = AVSpeechUtteranceDefaultSpeechRate
         pitch = 1.0
         volume = 1.0
         
         let defaultSpeechSettings: Dictionary<NSObject, AnyObject> = ["rate": rate, "pitch": pitch, "volume": volume]
         
-        NSUserDefaults.standardUserDefaults().registerDefaults(defaultSpeechSettings)
+        NSUserDefaults.standardUserDefaults().registerDefaults(defaultSpeechSettings as! [String: AnyObject])
     }
     
     
@@ -159,7 +159,7 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
     
     
     func setInitialFontAttribute() {
-        let rangeOfWholeText = NSMakeRange(0, count(tvEditor.text.utf16))
+        let rangeOfWholeText = NSMakeRange(0, tvEditor.text.utf16.count)
         let attributedText = NSMutableAttributedString(string: tvEditor.text)
         attributedText.addAttribute(NSFontAttributeName, value: UIFont(name: "Arial", size: 18.0)!, range: rangeOfWholeText)
         tvEditor.textStorage.beginEditing()
@@ -221,7 +221,7 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
                     speechUtterance.voice = voice
                 }
                 
-                totalTextLength = totalTextLength + count(pieceOfText.utf16)
+                totalTextLength = totalTextLength + pieceOfText.utf16.count
                 speechSynthesizer.speakUtterance(speechUtterance)
             }
             
@@ -250,8 +250,8 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
  
     // MARK: AVSpeechSynthesizerDelegate method implementation
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer!, didFinishSpeechUtterance utterance: AVSpeechUtterance!) {
-        spokenTextLengths = spokenTextLengths + count(utterance.speechString.utf16) + 1
+    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didFinishSpeechUtterance utterance: AVSpeechUtterance) {
+        spokenTextLengths = spokenTextLengths + utterance.speechString.utf16.count + 1
         
         let progress: Float = Float(spokenTextLengths * 100 / totalTextLength)
         pvSpeechProgress.progress = progress / 100
@@ -265,12 +265,12 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
     }
     
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer!, didStartSpeechUtterance utterance: AVSpeechUtterance!) {
+    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didStartSpeechUtterance utterance: AVSpeechUtterance) {
         currentUtterance = currentUtterance + 1
     }
     
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer!, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance!) {
+    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
         let progress: Float = Float(spokenTextLengths + characterRange.location) * 100 / Float(totalTextLength)
         pvSpeechProgress.progress = progress / 100
     
@@ -292,7 +292,7 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
         attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.orangeColor(), range: NSMakeRange(0, attributedString.length))
         
         // Make sure that the text will keep the original font by setting it as an attribute.
-        attributedString.addAttribute(NSFontAttributeName, value: fontAttribute!, range: NSMakeRange(0, count(attributedString.string.utf16)))
+        attributedString.addAttribute(NSFontAttributeName, value: fontAttribute!, range: NSMakeRange(0, attributedString.string.utf16.count))
         
         // In case the selected word is not visible scroll a bit to fix this.
         tvEditor.scrollRangeToVisible(rangeInTotalText)
@@ -335,7 +335,7 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
      func GetNews() {
         let url = NSURL(string: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http%3A%2F%2Fnews.google.com%2Fnews%3Foutput%3Drss")
         let requestGet = NSMutableURLRequest(URL: url!)
-        var response: NSURLResponse?
+       
         
         requestGet.HTTPMethod = "GET"
         requestGet.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -343,14 +343,14 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
         NSURLConnection.sendAsynchronousRequest(requestGet, queue: NSOperationQueue.mainQueue())
             {(response, data, error) in
                 
-                println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                print(NSString(data: data!, encoding: NSUTF8StringEncoding))
                 
-                var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-                let json:JSON = JSON(data: data)
+               
+                let json:JSON = JSON(data: data!)
                 var str: String = " "
                 if response != nil {
                     
-                    for(key :String, news:JSON) in json["responseData"]["feed"]["entries"]{
+                    for(key, news): (String, JSON) in json["responseData"]["feed"]["entries"]{
                         str = str+news["title"].stringValue + "\n"
                         self.tvEditor.text = str
                         
@@ -366,23 +366,20 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate, SettingsVie
     
     func isConnected() -> Bool {
         
-        var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
+        var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
-        
         let defaultRouteReachability = withUnsafePointer(&zeroAddress) {
-            SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0)).takeRetainedValue()
+            SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
         }
-        
-        var flags: SCNetworkReachabilityFlags = 0
-        if SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) == 0 {
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
             return false
         }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         
-        let isReachable = (flags & UInt32(kSCNetworkFlagsReachable)) != 0
-        let needsConnection = (flags & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
-        
-        return isReachable && !needsConnection
+        return (isReachable && !needsConnection)
     }
         
     

@@ -88,7 +88,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         var cell: UITableViewCell!
         
         if indexPath.row < 3 {
-            cell = tableView.dequeueReusableCellWithIdentifier("idCellSlider", forIndexPath: indexPath) as! UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("idCellSlider", forIndexPath: indexPath) 
             
             let keyLabel = cell.contentView.viewWithTag(10) as? UILabel
             let valueLabel = cell.contentView.viewWithTag(20) as? UILabel
@@ -133,7 +133,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         else{
-            cell = tableView.dequeueReusableCellWithIdentifier("idCellVoicePicker", forIndexPath: indexPath) as! UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("idCellVoicePicker", forIndexPath: indexPath) 
             
             let pickerView = cell.contentView.viewWithTag(10) as! UIPickerView
             pickerView.delegate = self
@@ -190,11 +190,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func prepareVoiceList() {
         for voice in AVSpeechSynthesisVoice.speechVoices() {
-            let voiceLanguageCode = (voice as! AVSpeechSynthesisVoice).language
+            let voiceLanguageCode = (voice ).language
             
             let languageName = NSLocale.currentLocale().displayNameForKey(NSLocaleIdentifier, value: voiceLanguageCode)
             
-            let dictionary = ["languageName": languageName, "languageCode": voiceLanguageCode]
+            let dictionary = ["languageName": languageName!, "languageCode": voiceLanguageCode]
             
             arrVoiceLanguages.append(dictionary)
         }

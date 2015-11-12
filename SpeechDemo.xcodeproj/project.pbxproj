@@ -15,18 +15,22 @@
 		C0952D0A1A8A1D4700BF69BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0952D081A8A1D4700BF69BF /* LaunchScreen.xib */; };
 		C0952D161A8A1D4800BF69BF /* SpeechDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0952D151A8A1D4800BF69BF /* SpeechDemoTests.swift */; };
 		C0952D201A8A1F4E00BF69BF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0952D1F1A8A1F4E00BF69BF /* SettingsViewController.swift */; };
-		FC5D187F1B7E9E9600E33535 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D187E1B7E9E9600E33535 /* SwiftyJSON.swift */; };
-		FC5D188D1B7EA6D600E33535 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D18821B7EA6D600E33535 /* Alamofire.swift */; };
-		FC5D188E1B7EA6D600E33535 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D18831B7EA6D600E33535 /* Download.swift */; };
-		FC5D188F1B7EA6D600E33535 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC5D18841B7EA6D600E33535 /* Info.plist */; };
-		FC5D18901B7EA6D600E33535 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D18851B7EA6D600E33535 /* Manager.swift */; };
-		FC5D18911B7EA6D600E33535 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D18861B7EA6D600E33535 /* MultipartFormData.swift */; };
-		FC5D18921B7EA6D600E33535 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D18871B7EA6D600E33535 /* ParameterEncoding.swift */; };
-		FC5D18931B7EA6D600E33535 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D18881B7EA6D600E33535 /* Request.swift */; };
-		FC5D18941B7EA6D600E33535 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D18891B7EA6D600E33535 /* ResponseSerialization.swift */; };
-		FC5D18951B7EA6D600E33535 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D188A1B7EA6D600E33535 /* ServerTrustPolicy.swift */; };
-		FC5D18961B7EA6D600E33535 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D188B1B7EA6D600E33535 /* Upload.swift */; };
-		FC5D18971B7EA6D600E33535 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D188C1B7EA6D600E33535 /* Validation.swift */; };
+		FCCA6AB31BF4C9410043731D /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AA41BF4C9410043731D /* Alamofire.swift */; };
+		FCCA6AB41BF4C9410043731D /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AA51BF4C9410043731D /* Download.swift */; };
+		FCCA6AB51BF4C9410043731D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AA61BF4C9410043731D /* Error.swift */; };
+		FCCA6AB61BF4C9410043731D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCA6AA71BF4C9410043731D /* Info.plist */; };
+		FCCA6AB71BF4C9410043731D /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AA81BF4C9410043731D /* Manager.swift */; };
+		FCCA6AB81BF4C9410043731D /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AA91BF4C9410043731D /* MultipartFormData.swift */; };
+		FCCA6AB91BF4C9410043731D /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AAA1BF4C9410043731D /* ParameterEncoding.swift */; };
+		FCCA6ABA1BF4C9410043731D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AAB1BF4C9410043731D /* Request.swift */; };
+		FCCA6ABB1BF4C9410043731D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AAC1BF4C9410043731D /* Response.swift */; };
+		FCCA6ABC1BF4C9410043731D /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AAD1BF4C9410043731D /* ResponseSerialization.swift */; };
+		FCCA6ABD1BF4C9410043731D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AAE1BF4C9410043731D /* Result.swift */; };
+		FCCA6ABE1BF4C9410043731D /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AAF1BF4C9410043731D /* ServerTrustPolicy.swift */; };
+		FCCA6ABF1BF4C9410043731D /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AB01BF4C9410043731D /* Stream.swift */; };
+		FCCA6AC01BF4C9410043731D /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AB11BF4C9410043731D /* Upload.swift */; };
+		FCCA6AC11BF4C9410043731D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AB21BF4C9410043731D /* Validation.swift */; };
+		FCCA6AC31BF4C9AC0043731D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA6AC21BF4C9AC0043731D /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,19 +57,23 @@
 		C0952D151A8A1D4800BF69BF /* SpeechDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechDemoTests.swift; sourceTree = "<group>"; };
 		C0952D1F1A8A1F4E00BF69BF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FC5D187C1B7E9DAA00E33535 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FC5D187E1B7E9E9600E33535 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
-		FC5D18811B7EA6D600E33535 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
-		FC5D18821B7EA6D600E33535 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		FC5D18831B7EA6D600E33535 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
-		FC5D18841B7EA6D600E33535 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC5D18851B7EA6D600E33535 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		FC5D18861B7EA6D600E33535 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
-		FC5D18871B7EA6D600E33535 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
-		FC5D18881B7EA6D600E33535 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		FC5D18891B7EA6D600E33535 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
-		FC5D188A1B7EA6D600E33535 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		FC5D188B1B7EA6D600E33535 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
-		FC5D188C1B7EA6D600E33535 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		FCCA6AA31BF4C9410043731D /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
+		FCCA6AA41BF4C9410043731D /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		FCCA6AA51BF4C9410043731D /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		FCCA6AA61BF4C9410043731D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		FCCA6AA71BF4C9410043731D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCCA6AA81BF4C9410043731D /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		FCCA6AA91BF4C9410043731D /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		FCCA6AAA1BF4C9410043731D /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		FCCA6AAB1BF4C9410043731D /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FCCA6AAC1BF4C9410043731D /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		FCCA6AAD1BF4C9410043731D /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		FCCA6AAE1BF4C9410043731D /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		FCCA6AAF1BF4C9410043731D /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		FCCA6AB01BF4C9410043731D /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		FCCA6AB11BF4C9410043731D /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		FCCA6AB21BF4C9410043731D /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		FCCA6AC21BF4C9AC0043731D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +116,7 @@
 		C0952CFC1A8A1D4700BF69BF /* SpeechDemo */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D18801B7EA6D600E33535 /* libs */,
+				FCCA6AA21BF4C9410043731D /* Source */,
 				C0952CFF1A8A1D4700BF69BF /* AppDelegate.swift */,
 				C0952D011A8A1D4700BF69BF /* ViewController.swift */,
 				C0952D1F1A8A1F4E00BF69BF /* SettingsViewController.swift */,
@@ -117,6 +125,7 @@
 				C0952D061A8A1D4700BF69BF /* Images.xcassets */,
 				C0952D081A8A1D4700BF69BF /* LaunchScreen.xib */,
 				C0952CFD1A8A1D4700BF69BF /* Supporting Files */,
+				FCCA6AC21BF4C9AC0043731D /* SwiftyJSON.swift */,
 			);
 			path = SpeechDemo;
 			sourceTree = "<group>";
@@ -146,25 +155,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FC5D18801B7EA6D600E33535 /* libs */ = {
+		FCCA6AA21BF4C9410043731D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D187E1B7E9E9600E33535 /* SwiftyJSON.swift */,
-				FC5D18811B7EA6D600E33535 /* Alamofire.h */,
-				FC5D18821B7EA6D600E33535 /* Alamofire.swift */,
-				FC5D18831B7EA6D600E33535 /* Download.swift */,
-				FC5D18841B7EA6D600E33535 /* Info.plist */,
-				FC5D18851B7EA6D600E33535 /* Manager.swift */,
-				FC5D18861B7EA6D600E33535 /* MultipartFormData.swift */,
-				FC5D18871B7EA6D600E33535 /* ParameterEncoding.swift */,
-				FC5D18881B7EA6D600E33535 /* Request.swift */,
-				FC5D18891B7EA6D600E33535 /* ResponseSerialization.swift */,
-				FC5D188A1B7EA6D600E33535 /* ServerTrustPolicy.swift */,
-				FC5D188B1B7EA6D600E33535 /* Upload.swift */,
-				FC5D188C1B7EA6D600E33535 /* Validation.swift */,
+				FCCA6AA31BF4C9410043731D /* Alamofire.h */,
+				FCCA6AA41BF4C9410043731D /* Alamofire.swift */,
+				FCCA6AA51BF4C9410043731D /* Download.swift */,
+				FCCA6AA61BF4C9410043731D /* Error.swift */,
+				FCCA6AA71BF4C9410043731D /* Info.plist */,
+				FCCA6AA81BF4C9410043731D /* Manager.swift */,
+				FCCA6AA91BF4C9410043731D /* MultipartFormData.swift */,
+				FCCA6AAA1BF4C9410043731D /* ParameterEncoding.swift */,
+				FCCA6AAB1BF4C9410043731D /* Request.swift */,
+				FCCA6AAC1BF4C9410043731D /* Response.swift */,
+				FCCA6AAD1BF4C9410043731D /* ResponseSerialization.swift */,
+				FCCA6AAE1BF4C9410043731D /* Result.swift */,
+				FCCA6AAF1BF4C9410043731D /* ServerTrustPolicy.swift */,
+				FCCA6AB01BF4C9410043731D /* Stream.swift */,
+				FCCA6AB11BF4C9410043731D /* Upload.swift */,
+				FCCA6AB21BF4C9410043731D /* Validation.swift */,
 			);
-			name = libs;
-			path = ../Source;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +222,8 @@
 		C0952CF21A8A1D4700BF69BF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Appcoda;
 				TargetAttributes = {
@@ -247,7 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC5D188F1B7EA6D600E33535 /* Info.plist in Resources */,
+				FCCA6AB61BF4C9410043731D /* Info.plist in Resources */,
 				C0952D051A8A1D4700BF69BF /* Main.storyboard in Resources */,
 				C0952D0A1A8A1D4700BF69BF /* LaunchScreen.xib in Resources */,
 				C0952D071A8A1D4700BF69BF /* Images.xcassets in Resources */,
@@ -268,20 +281,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC5D18961B7EA6D600E33535 /* Upload.swift in Sources */,
-				FC5D188D1B7EA6D600E33535 /* Alamofire.swift in Sources */,
 				C0952D021A8A1D4700BF69BF /* ViewController.swift in Sources */,
-				FC5D18921B7EA6D600E33535 /* ParameterEncoding.swift in Sources */,
+				FCCA6AB31BF4C9410043731D /* Alamofire.swift in Sources */,
+				FCCA6AB91BF4C9410043731D /* ParameterEncoding.swift in Sources */,
+				FCCA6ABF1BF4C9410043731D /* Stream.swift in Sources */,
+				FCCA6AC11BF4C9410043731D /* Validation.swift in Sources */,
 				C0952D001A8A1D4700BF69BF /* AppDelegate.swift in Sources */,
-				FC5D18931B7EA6D600E33535 /* Request.swift in Sources */,
-				FC5D18951B7EA6D600E33535 /* ServerTrustPolicy.swift in Sources */,
-				FC5D18901B7EA6D600E33535 /* Manager.swift in Sources */,
+				FCCA6ABD1BF4C9410043731D /* Result.swift in Sources */,
+				FCCA6AC31BF4C9AC0043731D /* SwiftyJSON.swift in Sources */,
+				FCCA6ABB1BF4C9410043731D /* Response.swift in Sources */,
+				FCCA6ABA1BF4C9410043731D /* Request.swift in Sources */,
+				FCCA6AB71BF4C9410043731D /* Manager.swift in Sources */,
+				FCCA6AB41BF4C9410043731D /* Download.swift in Sources */,
 				C0952D201A8A1F4E00BF69BF /* SettingsViewController.swift in Sources */,
-				FC5D18941B7EA6D600E33535 /* ResponseSerialization.swift in Sources */,
-				FC5D187F1B7E9E9600E33535 /* SwiftyJSON.swift in Sources */,
-				FC5D18911B7EA6D600E33535 /* MultipartFormData.swift in Sources */,
-				FC5D188E1B7EA6D600E33535 /* Download.swift in Sources */,
-				FC5D18971B7EA6D600E33535 /* Validation.swift in Sources */,
+				FCCA6AB81BF4C9410043731D /* MultipartFormData.swift in Sources */,
+				FCCA6AC01BF4C9410043731D /* Upload.swift in Sources */,
+				FCCA6AB51BF4C9410043731D /* Error.swift in Sources */,
+				FCCA6ABE1BF4C9410043731D /* ServerTrustPolicy.swift in Sources */,
+				FCCA6ABC1BF4C9410043731D /* ResponseSerialization.swift in Sources */,
 				C05271F51A8A6762002A37D8 /* CustomSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
